@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplikasi Mobile</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    </link>
+    <link href="./webview/css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+    </script>
+</head>
+
+<body class="mobile-container">
+    <header class="sticky-top bg-primary px-3 z-3" style="position:sticky;top:0;">
+        <div class="d-flex flex-row align-items-center">
+            <div class="flex-grow-1 align-self-center py-3">
+                <img id="MOBILE_LOGO" style="height: 35px" class="img-fluid" src="https://sp2680.serpul.co.id/img/asset/header-white-20241031144544.png" alt="logo" />
+            </div>
+            <a class="d-flex flex-row align-items-center text-decoration-none" href="MOBILE_CHAT">
+                <div class="text-white p-1" style="-webkit-text-fill-color: white">
+                    <p class="m-0" style="font-size: x-small">Chat</p>
+                    <p class="m-0" style="font-size: x-small">Kami</p>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 16 16">
+                        <path fill="white"
+                            d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <div class="container-fluid bg-white p-0 m-0 vh-100">
+        <!-- card saldo-->
+        <div class="position-relative w-100 bg-primary" style="height: 50px">
+            <div class="position-absolute top-100 start-50 translate-middle w-100 p-3">
+                <div class="card border-0 shadow-sm px-3 py-2 card-old-android">
+                    <div class="container p-0 m-0">
+                        <div class="d-flex flex-row">
+                            <div class="flex-grow-1">
+                                <p class="text-secondary p-0 m-0">
+                                    <small>Top Up Saya</small>
+                                </p>
+                                <strong id="MOBILE_BALANCE" class="p-0 m-0"></strong>
+                            </div>
+                            <!-- deposit -->
+                            <a class="d-flex flex-column align-items-center text-decoration-none mr-3"
+                                href="MOBILE_DEPOSIT">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white"
+                                    class="bg-primary rounded-1 rounded-old-android" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                                </svg>
+                                <p class="text-secondary p-0 m-0"><small>Top Up</small></p>
+                            </a>
+                            <!-- transfer -->
+                            <a class="d-flex flex-column align-items-center text-decoration-none"
+                                href="MOBILE_TRANSFER">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white"
+                                    class="bg-primary rounded-1 rounded-old-android" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5" />
+                                </svg>
+                                <p class="text-secondary p-0 m-0"><small>Kirim</small></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Banner, COMPID: BNNR1 -->
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner" style="margin-top: 2.3rem">
+                <a class="carousel-item active" href="MOBILE_BANNER/20">
+                    <img src="https://sp2680.serpul.co.id/img/banner/1768967998.png" class="object-fit-fill rounded" alt="🚀 Jualan Uang Digital/Emoney Semakin Mudah! 🚀">
+                </a><a class="carousel-item" href="MOBILE_BANNER/19">
+                    <img src="https://sp2680.serpul.co.id/img/banner/1768008476.png" class="object-fit-fill rounded" alt="🔁Transfer Sesama Atau Antar Bank?">
+                </a><a class="carousel-item" href="MOBILE_BANNER/15">
+                    <img src="https://sp2680.serpul.co.id/img/banner/1768008489.png" class="object-fit-fill rounded" alt="Yuuk Join Bersama DigiMart">
+                </a>
+            </div>
+        </div>
+
+        <!-- main menu -->
+        <div class="d-flex flex-column p-3">
+            <strong class="p-0 m-0">Prabayar</strong>
+            <!-- PRABAYAR, COMPID: PRDKPRBYR1 -->
+            <div class="row row-cols-4 px-2">
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/1">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/pulsa-reguler-20260109203645.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Pulsa Reguler</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/2">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/pulsa-transfer-20260122154935.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Pulsa Transfer</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/4">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/paket-data-20260109194643.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Paket Data</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/5">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/paket-telpon-sms-20260109202739.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Paket Telpon SMS</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/6">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/voucher-data-20260109203032.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Voucher Data</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/7">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/token-listrik-20260109201850.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Token Listrik</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset HIDEFORPLAYSTORE" href="MOBILE_PRABAYAR/8">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/top-up-game-20260109194704.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Top Up Game</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/9">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/uang-digital-20260109202131.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Uang Digital</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/10">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/voucher-kosong-20260109203221.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Voucher Kosong</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/11">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/tv-kabel-20260109202531.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">TV Kabel</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/18">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/hiburan-belanja-20260109204241.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Hiburan & Belanja</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/19">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/tambah-masa-aktif-20251229143537.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Tambah Masa Aktif</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/20">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/paket-roaming-20260109205127.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Paket Roaming</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/21">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/paket-data-byu-20251229143626.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Paket Data By.U</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/22">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/hot-promo-dana-20260109205840.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">[Hot Promo] Dana</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/23">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/hot-promo-free-fire-20260109205852.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">[Hot Promo] Free Fire</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/24">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/uang-digital-bebas-nominal-20260109205151.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Uang Digital Bebas Nominal</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PRABAYAR/25">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/telkomsel-omni-20260120153343.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Telkomsel Omni</p>
+                    </div>
+                </a>
+            </div>
+
+            <strong class="p-0 pt-4 m-0">Pascabayar</strong>
+            <!-- PASCABAYAR, COMPID: PRDKPSCBYR1 -->
+            <div class="row row-cols-4 px-2">
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PASCABAYAR/1">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/pln-pascabayar-20260109210451.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">PLN Pascabayar</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PASCABAYAR/2">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/pulsa-pascabayar-20260109211608.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Pulsa Pascabayar</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PASCABAYAR/3">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/telkom-20260109212326.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Telkom</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PASCABAYAR/4">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/bpjs-20260109211107.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">BPJS</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PASCABAYAR/5">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/pdam-20260109212401.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">PDAM</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PASCABAYAR/6">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/pgn-20260109210709.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">PGN</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PASCABAYAR/7">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/tv-pascabayar-20260109212346.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">TV Pascabayar</p>
+                    </div>
+                </a>
+                <a class="col p-1 text-decoration-none text-reset" href="MOBILE_PASCABAYAR/9">
+                    <div class="d-flex flex-column align-items-center text-center p-0">
+                        <div class="card border-0 shadow-sm rounded-3 p-2 d-flex justify-content-center align-items-center card-old-android"
+                            style="height: 50px; width: 50px">
+                            <img height="35px" width="35px"
+                                src="https://sp2680.serpul.co.id/img/icon/bayar-tagihan-20260122155343.png"
+                                alt="Card image" />
+                        </div>
+                        <p class="mt-2 m-0 p-0" style="font-size: small">Bayar Tagihan</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="./webview/js"></script>
+</body>
+
+</html>
